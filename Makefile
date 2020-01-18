@@ -12,3 +12,6 @@ lint:
 
 run:
 	PYTHONPATH=. FLASK_APP=hello_world flask run
+
+docker_build:
+	docker build -t hello_world-printer .
