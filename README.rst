@@ -1,16 +1,25 @@
+.. image:: https://travis-ci.com/kbalko/se_hello_printer_app.svg?branch=master
+    :target: https://travis-ci.com/kbalko/se_hello_printer_app
+
+.. image:: https://app.statuscake.com/button/index.php?Track=mjo6Vaaxoz&Days=1&Design=1
+    :target: https://www.statuscake.com
+
+
+
+
 Simple Flask App
 ================
 
-Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć 
+
+
+Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
 o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Rozpocząnając pracę z projektem (wykorzystując virtualenv). Hermetyczne środowisko dla pojedyńczej aplikacji w python-ie:
 
   ::
 
-    # centos, add to ~/.bashrc
-    $ source /usr/bin/virtualenvwrapper.sh
-    
+
     # ubuntu, add to ~/.bashrc
     $ source /usr/local/bin/virtualenvwrapper.sh
 
@@ -23,7 +32,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Uruchamianie applikacji:
 
-  :: 
+  ::
 
     # jako zwykły program
     $ python main.py
@@ -44,7 +53,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
     $ source /usr/local/bin/virtualenvwrapper.sh # nie trzeba, jeśli już w .bashrc
     $ workon wsb-simple-flask-app
-    
+
     ...
 
     # deaktywacja virtualenv
@@ -55,7 +64,7 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
   ::
 
     ...
-
+- statuscake
 
 Pomocnicze
 ==========
@@ -83,10 +92,10 @@ Centos
     $ pip install -U pip
     $ pip install virtualenv
     $ pip install virtualenvwrapper
-  
+
 - Instalacja docker-a:
 
-  :: 
+  ::
 
     $ yum remove docker \
         docker-common \
