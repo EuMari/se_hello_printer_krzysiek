@@ -1,17 +1,18 @@
-language:  python
+language: python
 services:
-  - docker
-
+- docker
 python:
-  - "2.7"
+- '2.7'
 install:
-  - make deps
+- make deps
 script:
-  - make lint
-  - make test_xunit
-  - make docker_build
-  - make docker_push
+- make lint
+- make test_xunit
+- make docker_build
+- make docker_push
 deploy:
   provider: heroku
   app: dry-brushlands-36461
-  api_key: ${HEROKU_API_KEY}
+  api_key: "${HEROKU_API_KEY}"
+env:
+  secure: QRoCm64SFJCKp5PVetNa4t5PwUEzUUyoM8fo3qJtwK5QqX5EZTT2Y1mEuKc/ecqfSIC1/etRNf6c85jzu6XCsu6UXfXRIism5ubV7+I+8IqkzlGI1tA1/TQTYxFowvXV4KtW7VnhPbNTeMjvR7EcMV+JF1Mmcybge79a0X+BtcTgOZ8BZLbpUenzZZ9SRePvcHJCy8S1kNKJAguOlwheDDz71kbRPQpFXf4SoXEvLDbY8H9lQHAwM6PxOhsdYqDdz6HuJiPL3LSB8Csw8iMp7CMrsHINExQMIbywAZPS1yp86TcilTzltnpLSTiNAJM7LfYfna4fbrGSONHbuv3SMCNv9jB31gvwrYn74Ce3Bxrhw4zDEYi71FrQpGesD2UggLsdSv4/l0kynZEus9KANzWuw1QLozaekN6Kp1HaP0nLniDMxlE9ONd35+guACi01A/mFzfieCHw6VXbJeaUWEq/JnQuoDaULltVgK6T/oTK1WbK+r08pBE9BelSIijIZgOgGb1FSeLtstB+G7gvDwEG/1oeSpSNtaEUE6KqrUtmdoYZ5zuMUH3EmvG763ZlPzXdDCrft35U7+msZZ1hz2BzuGY3yYeZJw4a0ZxeLhYWWznkk4eufWHzOwau8PYs71+OtIahJe66aulXyWQqM52S0ilfG6N079x7rS6Zdtk=
