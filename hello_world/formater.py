@@ -31,8 +31,8 @@ def format_to_json(msg, imie):
 
 def format_to_xml(msg, imie):
     greetings = ET.Element("greetings")
-    ET.SubElement(greetings, "name").text = "Krzysiek"
-    ET.SubElement(greetings, "msg").text = "Hello World!"
+    ET.SubElement(greetings, "name").text = imie
+    ET.SubElement(greetings, "msg").text = msg
     return ET.tostring(greetings)
 
 
