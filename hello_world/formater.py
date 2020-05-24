@@ -34,7 +34,7 @@ def format_to_xml(msg, imie):
     greetings = ET.Element("greetings")
     ET.SubElement(greetings, "name").text = imie
     ET.SubElement(greetings, "msg").text = msg
-    form_xml = PT.parseString(ET.tostring(greetings)).toprettyxml(indent=" ")
+    form_xml = PT.parseString(ET.tostring(greetings)).toprettyxml(indent="  ")
     return form_xml[23:]
 
 
