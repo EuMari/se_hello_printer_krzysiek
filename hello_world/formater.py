@@ -1,5 +1,6 @@
 import json
 import xml.etree.cElementTree as ET
+import xml.dom.minidom as PT
 PLAIN = "plain"
 PLAIN_UP = "plain_uppercase"
 PLAIN_LO = "plain_lowercase"
@@ -33,7 +34,8 @@ def format_to_xml(msg, imie):
     greetings = ET.Element("greetings")
     ET.SubElement(greetings, "name").text = imie
     ET.SubElement(greetings, "msg").text = msg
-    return ET.tostring(greetings)
+    format_xml = PT.parseString(ET.tostring(greetings)).toprettyxml(indent= "  ")
+    return format_xml[23:]
 
 
 def plain_text(msg, imie):
