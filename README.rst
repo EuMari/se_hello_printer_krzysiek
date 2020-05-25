@@ -59,11 +59,8 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
     # deaktywacja virtualenv
     $ deactivate
 
-- Integracja z TravisCI:
+- Integracja z TravisCI
 
-  ::
-
-    ...
 - statuscake
 
 Pomocnicze
@@ -81,37 +78,7 @@ Ubuntu
 
 - Instalacja dockera: `dockerce howto <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_
 
-Centos
-------
 
-- Instalacja python virtualenv i virtualenvwrapper:
-
-  ::
-
-    $ yum install -y python-pip
-    $ pip install -U pip
-    $ pip install virtualenv
-    $ pip install virtualenvwrapper
-
-- Instalacja docker-a:
-
-  ::
-
-    $ yum remove docker \
-        docker-common \
-        container-selinux \
-        docker-selinux \
-        docker-engine
-
-    $ yum install -y yum-utils
-
-    $ yum-config-manager \
-      --add-repo \
-      https://download.docker.com/linux/centos/docker-ce.repo
-
-    $ yum makecache fast
-    $ yum install -y docker-ce
-    $ systemctl start docker
 
 Materiały
 =========
