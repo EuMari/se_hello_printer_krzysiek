@@ -12,6 +12,11 @@ class FlaskrTestCase(unittest.TestCase):
         rv = self.app.get('/outputs')
         ','.join(SUPPORTED) in rv.data
 
+    def test_name_output(self):
+        rv = self.app.get('/?name=Apolonia')
+        op = 'Apolonia'
+        self.assertEquals(op, rv.data.split(" ")[0])
+
     def test_msg_with_output_json(self):
         rv = self.app.get('/?output=json')
         op = '{"imie": "Krzysiek", "msg": "Hello World!"}'
