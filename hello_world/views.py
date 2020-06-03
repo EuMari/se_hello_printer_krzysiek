@@ -10,6 +10,13 @@ msg = "Aplikacja testowa!"
 
 
 @app.route('/')
+@app.route('/index')
+def index():
+    user = {'username': 'Bolek'}
+    return render_template('index.html', title='Projekt', user=user)
+
+
+@app.route('/formaty')
 def formaty():
     output = request.args.get('output')
     name = request.args.get('name')
@@ -24,12 +31,6 @@ def formaty():
 @app.route('/outputs')
 def supported_output():
     return ", ".join(SUPPORTED)
-
-
-@app.route('/index')
-def index():
-    user = {'username': 'Bolek'}
-    return render_template('index.html', title='Projekt', user=user)
 
 
 @app.route('/login')
