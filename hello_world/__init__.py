@@ -1,4 +1,7 @@
 from flask import Flask
-app = Flask(__name__)
+from config import Config
 
-import hello_world.views # noqa
+app = Flask(__name__)
+app.config.from_object(Config)
+
+from hello_world import views # noqa
