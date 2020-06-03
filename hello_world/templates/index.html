@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1> Hej, {{ user.username }}</h1>
+  <h1> Hej, {{ current_user.username }}</h1>
   <p><a href="{{ url_for('formaty', name="Tu moze byc Twoje imie", output="json") }}">Formaty - potestuj</a></p>
   <p>Name= </p>
   <p>Output=plain, plain_uppercase, plain_lowercase, json, xml</a></p>
