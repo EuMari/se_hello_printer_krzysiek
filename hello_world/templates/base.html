@@ -8,10 +8,23 @@
   </head>
   <body>
     <div>Projekt |
-      <a href='/index'>Powitanie</a> |
-      <a href='/login'>Zaloguj</a>
+      <a href="{{ url_for('index') }}">Powitalna</a> |
+      {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}">Zaloguj</a>
+      {% else %}
+      <a href="{{ url_for('logout') }}">Wyloguj</a>
+      {% endif %}
     </div>
     <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
     {% block content %}{% endblock %}
   </body>
 </html>
