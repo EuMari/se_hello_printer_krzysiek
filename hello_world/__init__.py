@@ -10,5 +10,6 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
 login.login_view = "login"
+login.login_message = "Wymagane logowanie"
 
 from hello_world import views, models, errors # noqa
