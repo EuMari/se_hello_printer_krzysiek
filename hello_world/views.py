@@ -16,7 +16,17 @@ msg = "Aplikacja testowa!"
 @app.route('/index')
 @login_required
 def index():
-    return render_template('index.html', title='Projekt')
+    posts = [
+        {
+            'author': {'username': 'Janek'},
+            'body': 'hej!'
+        },
+        {
+            'author': {'username': 'Bolek'},
+            'body': 'super'
+        }
+    ]
+    return render_template('index.html', title='Projekt', posts=posts)
 
 
 @app.route('/formaty')
@@ -80,4 +90,8 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('user.html', user=user)
+    posts = [
+        {'author': user, 'body': 'Test post #1'},
+        {'author': user, 'body': 'Test post #2'}
+    ]
+    return render_template('user.html', user=user, posts=posts)

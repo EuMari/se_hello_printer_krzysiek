@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>{{ user.username }}</h1>
+    <table>
+      <tr valign="top">
+        <td><h1>{{ user.username }}</h1></td>
+      </tr>
+    </table>
+    <hr>
+    {% for post in posts %}
+      {% include '_post.html' %}
+    {% endfor %}
 {% endblock %}
