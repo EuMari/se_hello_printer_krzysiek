@@ -75,7 +75,7 @@ def register():
     return render_template('register.html', title='Rejestracja', form=form)
 
 
-# profil 
+# profil
 @app.route('/user/<username>')
 @login_required
 def user(username):
