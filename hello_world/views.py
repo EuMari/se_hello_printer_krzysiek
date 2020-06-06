@@ -19,12 +19,16 @@ msg = "Aplikacja testowa!"
 def index():
     posts = [
         {
+            'author': {'username': 'Ania'},
+            'body': 'Potestuj'
+        },
+        {
             'author': {'username': 'Janek'},
-            'body': 'hej!'
+            'body': 'Name= '
         },
         {
             'author': {'username': 'Bolek'},
-            'body': 'super'
+            'body': 'Output=plain, plain_uppercase, plain_lowercase, json, xml'
         }
     ]
     return render_template('index.html', title='Hej!', posts=posts)
