@@ -3,7 +3,8 @@ flask-wtf
 flask-login
 flask-sqlalchemy
 flask-migrate
+flask-moment
+flask-bootstrap
 python-dotenv
 gunicorn
 email-validator
-flask-bootstrap

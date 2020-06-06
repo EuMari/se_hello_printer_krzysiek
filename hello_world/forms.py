@@ -1,8 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, \
-TextAreaField # noqa
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, \
-Length # noqa
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import TextAreaField
+from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
+from wtforms.validators import Length
 from hello_world.models import User
 
 

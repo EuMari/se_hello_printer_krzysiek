@@ -1,31 +1,38 @@
-<html>
-  <head>
-    {% if title %}
-    <title>{{ title }} - Strona testowa</title>
-    {% else %}
-    <title> Moja pierwsza aplikacja </title>
-    {% endif %}
-  </head>
-  <body>
-    <div>Projekt |
-      <a href="{{ url_for('index') }}">Powitalna</a> |
-      {% if current_user.is_anonymous %}
-      <a href="{{ url_for('login') }}">Zaloguj</a>
-      {% else %}
-      <a href="{{ url_for('user', username=current_user.username)}}">Profil</a> |
-      <a href="{{ url_for('logout') }}">Wyloguj</a>
-      {% endif %}
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} - Projekt{% else %}Moj pierwszy projekt{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+      <div class="container">
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                  <li><a href="{{ url_for('index') }}">Powitalna</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  {% if current_user.is_anonymous %}
+                  <li><a href="{{ url_for('login') }}">Zaloguj</a></li>
+                  {% else %}
+                  <li><a href="{{ url_for('user', username=current_user.username) }}">Profil</a></li>
+                  <li><a href="{{ url_for('logout') }}">Wyloguj</a></li>
+                  {% endif %}
+              </ul>
+          </div>
+      </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block app_content %}{% endblock %}
     </div>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-      {% for message in messages %}
-      <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
-  </body>
-</html>
+{% endblock %}

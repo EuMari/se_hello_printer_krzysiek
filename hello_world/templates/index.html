@@ -1,11 +1,31 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
   <h1> Hej, {{ current_user.username }}</h1>
+  {% if form %}
+   {{ wtf.quick_form(form) }}
+   <br>
+   {% endif %}
+   {% for post in posts %}
+       {% include '_post.html' %}
+   {% endfor %}
+   <nav aria-label="...">
+       <ul class="pager">
+           <li class="previous{% if not prev_url %} disabled{% endif %}">
+               <a href="{{ prev_url or '#' }}">
+                   <span aria-hidden="true">&larr;</span> Newer posts
+               </a>
+           </li>
+           <li class="next{% if not next_url %} disabled{% endif %}">
+               <a href="{{ next_url or '#' }}">
+                   Older posts <span aria-hidden="true">&rarr;</span>
+               </a>
+           </li>
+       </ul>
+   </nav>
   <p><a href="{{ url_for('formaty', name="Tu moze byc Twoje imie", output="json") }}">Formaty - potestuj</a></p>
   <p>Name= </p>
   <p>Output=plain, plain_uppercase, plain_lowercase, json, xml</a></p>
-  {% for post in posts %}
-  <div><p>{{ post.author.username }} pisze: <b>{{ post.body }}</b></p></div>
-  {% endfor %}
+
 {% endblock %}

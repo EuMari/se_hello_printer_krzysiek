@@ -6,6 +6,7 @@ from hello_world.forms import LoginForm, RegistrationForm, EditProfileForm
 from flask_login import current_user, login_user, logout_user, login_required
 from hello_world.models import User
 from werkzeug.urls import url_parse
+from datetime import datetime
 
 
 moje_imie = "Krzysiek"
@@ -26,7 +27,7 @@ def index():
             'body': 'super'
         }
     ]
-    return render_template('index.html', title='Projekt', posts=posts)
+    return render_template('index.html', title='Hej!', posts=posts)
 
 
 @app.route('/formaty')
@@ -110,3 +111,10 @@ def edit_profile():
         form.aboutme.data = current_user.aboutme
     return render_template('edit_profile.html', title="Edytuj profil",
                             form=form) # noqa
+
+
+@app.before_request
+def before_request():
+    if current_user.is_authenticated:
+        current_user.last_seen = datetime.utcnow()
+        db.session.commit()
