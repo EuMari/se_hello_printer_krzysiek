@@ -3,7 +3,12 @@
 {% block content %}
     <table>
       <tr valign="top">
-        <td><h1>{{ user.username }}</h1></td>
+        <td><h1>{{ user.username }}</h1>
+        {% if user.aboutme %}<p>{{ user.aboutme }}</p>{% endif %}
+        {% if user == current_user %}
+        <p><a href="{{ url_for('edit_profile') }}">Edytuj profil</a><p>
+        {% endif %}
+        </td>
       </tr>
     </table>
     <hr>

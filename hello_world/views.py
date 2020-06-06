@@ -2,7 +2,7 @@ from hello_world import app, db
 from formater import get_formatted
 from formater import SUPPORTED, PLAIN
 from flask import request, render_template, flash, redirect, url_for
-from hello_world.forms import LoginForm, RegistrationForm
+from hello_world.forms import LoginForm, RegistrationForm, EditProfileForm
 from flask_login import current_user, login_user, logout_user, login_required
 from hello_world.models import User
 from werkzeug.urls import url_parse
@@ -95,3 +95,18 @@ def user(username):
         {'author': user, 'body': 'Test post #2'}
     ]
     return render_template('user.html', user=user, posts=posts)
+
+
+@app.route('/edit_profile', methods=['GET', 'POST'])
+@login_required
+def edit_profile():
+    form = EditProfileForm()
+    if form.validate_on_submit():
+        current_user.aboutme = form.aboutme.data
+        db.session.commit()
+        flash('Zmiany zapisane')
+        return redirect(url_for('edit_profile'))
+    elif request.method == 'GET':
+        form.aboutme.data = current_user.aboutme
+    return render_template('edit_profile.html', title="Edytuj profil",
+                            form=form) # noqa
