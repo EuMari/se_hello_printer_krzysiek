@@ -1,10 +1,11 @@
+# -*- coding: utf-8 -*-
 from hello_world import app, db
-from formater import get_formatted
-from formater import SUPPORTED, PLAIN
+from formater import get_formatted, SUPPORTED, PLAIN
 from flask import request, render_template, flash, redirect, url_for
 from hello_world.forms import LoginForm, RegistrationForm, EditProfileForm
+from hello_world.forms import PostForm
 from flask_login import current_user, login_user, logout_user, login_required
-from hello_world.models import User
+from hello_world.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
 
@@ -13,25 +14,19 @@ moje_imie = "Krzysiek"
 msg = "Aplikacja testowa!"
 
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    posts = [
-        {
-            'author': {'username': 'Ania'},
-            'body': 'Potestuj'
-        },
-        {
-            'author': {'username': 'Janek'},
-            'body': 'Name= '
-        },
-        {
-            'author': {'username': 'Bolek'},
-            'body': 'Output=plain, plain_uppercase, plain_lowercase, json, xml'
-        }
-    ]
-    return render_template('index.html', title='Hej!', posts=posts)
+    form = PostForm()
+    if form.validate_on_submit():
+        post = Post(body=form.post.data, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash(u'Twój post został opublikowany')
+        return redirect(url_for('index'))
+    posts = current_user.followed_post().all()
+    return render_template('index.html', title='Hej!', form=form, posts=posts)
 
 
 @app.route('/formaty')
@@ -59,7 +54,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):
-            flash('Nieprawidlowy login lub haslo')
+            flash(u'Nieprawidłowy login lub hasło')
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
@@ -85,9 +80,9 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash('Zostales zarejestrowany. Teraz mozesz sie zalogowac')
+        flash(u'Zostałes zarejestrowany. Teraz możesz się zalogowac')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Rejestracja', form=form)
+        return render_template('register.html', title='Rejestracja', form=form)
 
 
 # profil

@@ -22,6 +22,10 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
 
+    def followed_post(self):
+        own = Post.query.filter_by(user_id=self.id)
+        return own.order_by(Post.timestamp.desc())
+
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
