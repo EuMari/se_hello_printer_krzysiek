@@ -80,9 +80,9 @@ def register():
         user.set_password(form.password.data)
         db.session.add(user)
         db.session.commit()
-        flash(u'Zostałes zarejestrowany. Teraz możesz się zalogowac')
+        flash(u'Zostałeś zarejestrowany. Teraz możesz się zalogować')
         return redirect(url_for('login'))
-        return render_template('register.html', title='Rejestracja', form=form)
+    return render_template('register.html', title='Rejestracja', form=form)
 
 
 # profil
