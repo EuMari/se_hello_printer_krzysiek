@@ -1,7 +1,7 @@
 import unittest
 from hello_world import app, db
-from hello_world.models import User, Post
-from datetime import datetime, timedelta
+from hello_world.models import User, Post # noqa
+from datetime import datetime, timedelta # noqa
 
 
 class UserModelCase(unittest.TestCase):
@@ -14,7 +14,7 @@ class UserModelCase(unittest.TestCase):
         db.drop_all()
 
     def test_password_hashing(self):
-        u = User(username = 'JanTester')
+        u = User(username='JanTester')
         u.set_password('testowe')
         self.assertFalse(u.check_password('nieprawidlowe'))
         self.assertTrue(u.check_password('testowe'))
