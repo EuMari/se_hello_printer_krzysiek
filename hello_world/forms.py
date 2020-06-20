@@ -42,3 +42,7 @@ class PostForm(FlaskForm):
     post = TextAreaField('Co u Ciebie?', validators=[
         DataRequired(), Length(min=1, max=140)])
     submit = SubmitField(u'Podziel się')
+
+
+class EmptyForm(FlaskForm):
+    submit = SubmitField('Submit')
