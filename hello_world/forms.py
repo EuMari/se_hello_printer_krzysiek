@@ -36,6 +36,7 @@ class RegistrationForm(FlaskForm):
 class EditProfileForm(FlaskForm):
     aboutme = TextAreaField('O mnie', validators=[Length(min=0, max=140)])
     submit = SubmitField('Zapisz')
+    back = SubmitField('Cofnij')
 
 
 class PostForm(FlaskForm):
@@ -46,3 +47,15 @@ class PostForm(FlaskForm):
 
 class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')
+
+
+class ResetPasswordRequestForm(FlaskForm):
+    email = StringField(u'Twój email', validators=[DataRequired(), Email()])
+    submit = SubmitField(u'Wyślij')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField(u'Hasło', validators=[DataRequired()])
+    password = PasswordField(
+        u'Powtórz hasło', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField(u'Zresetuj hasło')

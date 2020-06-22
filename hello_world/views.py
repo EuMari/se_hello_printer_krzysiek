@@ -2,12 +2,13 @@
 from hello_world import app, db
 from formater import get_formatted, SUPPORTED, PLAIN
 from flask import request, render_template, flash, redirect, url_for
-from hello_world.forms import LoginForm, RegistrationForm, EditProfileForm
-from hello_world.forms import PostForm, EmptyForm
+from hello_world.forms import LoginForm, RegistrationForm, EditProfileForm, \
+     PostForm, EmptyForm, ResetPasswordRequestForm, ResetPasswordForm
 from flask_login import current_user, login_user, logout_user, login_required
 from hello_world.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
+from hello_world.email import send_password_reset_email
 
 
 moje_imie = "Krzysiek"
@@ -115,10 +116,13 @@ def user(username):
 def edit_profile():
     form = EditProfileForm()
     if form.validate_on_submit():
-        current_user.aboutme = form.aboutme.data
-        db.session.commit()
-        flash('Zmiany zapisane')
-        return redirect(url_for('edit_profile'))
+        if form.submit.data:
+            current_user.aboutme = form.aboutme.data
+            db.session.commit()
+            flash('Zmiany zapisane')
+            return redirect(url_for('edit_profile'))
+        elif form.back.data:
+            return redirect(url_for('user', username=current_user.username))
     elif request.method == 'GET':
         form.aboutme.data = current_user.aboutme
     return render_template('edit_profile.html', title="Edytuj profil",
@@ -164,7 +168,7 @@ def unfollow(username):
         if user == current_user:
             flash(u'Nie możesz przestać śledzić samego siebie.')
             return redirect(url_for('user', username=username))
-        current_user.unfollow(user)
+            current_user.unfollow(user)
         db.session.commit()
         flash(u'Nie obserwujesz użytkownika {}.'.format(username))
         return redirect(url_for('user', username=username))
@@ -184,3 +188,34 @@ def explore():
         if posts.has_prev else None
     return render_template('index.html', title='Odkrywaj!', posts=posts.items,
                            next_url=next_url, prev_url=prev_url)
+
+
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_password_reset_email(user)
+        flash(u'Na Twojego e-maila została wysłana instrukcja do zresetowania hasła.')  # noqa
+        return redirect(url_for('login'))
+    return render_template('reset_password_request.html',
+                           title=u"Resetowanie hasła", form=form)
+
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    user = User.verify_reset_password_token(token)
+    if not user:
+        return redirect(url_for('index'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        user.set_password(form.password.data)
+        db.session.commit()
+        flash(u'Twoje hasło zostało zresetowane.')
+        return redirect(url_for('login'))
+    return render_template('reset_password.html', form=form)

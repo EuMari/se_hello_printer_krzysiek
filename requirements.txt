@@ -5,6 +5,8 @@ flask-sqlalchemy
 flask-migrate
 flask-moment
 flask-bootstrap
+flask-mail
+pyjwt
 python-dotenv
 gunicorn
 email-validator
