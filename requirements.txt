@@ -10,3 +10,4 @@ pyjwt
 python-dotenv
 gunicorn
 email-validator
+python-coveralls
