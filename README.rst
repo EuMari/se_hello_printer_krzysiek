@@ -1,27 +1,24 @@
 .. image:: https://travis-ci.com/kbalko/se_hello_printer_app.svg?branch=master
     :target: https://travis-ci.com/kbalko/se_hello_printer_app
 
-.. image:: https://app.statuscake.com/button/index.php?Track=mjo6Vaaxoz&Days=1&Design=1
-    :target: https://www.statuscake.com
-
 .. image:: https://coveralls.io/repos/github/kbalko/se_hello_printer_app/badge.svg
     :target: https://coveralls.io/github/kbalko/se_hello_printer_app
 
+.. image:: https://app.statuscake.com/button/index.php?Track=mjo6Vaaxoz&Days=1&Design=1
+    :target: https://www.statuscake.com
 
 
 
 Simple Flask App
 ================
+Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.
+Na potrzeby zaliczenia rozbudowana  na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
 
 
 
-Aplikacja Dydaktyczna wyświetlająca imię i wiadomość w różnych formatach dla zajęć
-o Continuous Integration, Continuous Delivery i Continuous Deployment.
-
-- Rozpocząnając pracę z projektem (wykorzystując virtualenv). Hermetyczne środowisko dla pojedyńczej aplikacji w python-ie:
+- Rozpocząnając pracę z projektem wykorzystujemy virtualenv. Hermetyczne środowisko dla pojedyńczej aplikacji w pythonie:
 
   ::
-
 
     # ubuntu, add to ~/.bashrc
     $ source /usr/local/bin/virtualenvwrapper.sh
@@ -50,7 +47,23 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
     $ PYTHONPATH=. py.test
     $ PYTHONPATH=. py.test  --verbose -s
 
-- Kontynuując pracę z projektem, aktywowanie hermetycznego środowiska dla aplikacji py:
+  lub za pośrednictwem pliku Makefile zgodnie z zasadą:
+  ::
+
+    target: dependencies
+      system command(s)
+
+  na przykład:
+  ::
+
+    test:
+      PYTHONPATH=. py.test --verbose -s
+
+  ::
+    #  uruchomienie testu
+    $ make test
+
+- Kontynuując pracę z projektem aktywujemy hermetyczne środowisko dla aplikacji py:
 
   ::
 
@@ -64,7 +77,15 @@ o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
 - Integracja z TravisCI
 
+- Docker
+
+- Jenkins
+
+- Heroku
+
 - statuscake
+
+- coveralls.io
 
 Pomocnicze
 ==========
