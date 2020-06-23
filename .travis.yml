@@ -9,6 +9,7 @@ script:
 - make lint
 - make test
 - make test_cov
+- pytest --cov=test/
 - make test_xunit
 - make docker_build
 - make docker_push
