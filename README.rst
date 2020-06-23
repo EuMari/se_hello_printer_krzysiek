@@ -12,11 +12,12 @@
 Simple Flask App
 ================
 Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.
-Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
+
+Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com). :heavy_check_mark:
 
 
 
-- Rozpocząnając pracę z projektem wykorzystujemy virtualenv. Hermetyczne środowisko dla pojedyńczej aplikacji w pythonie:
+- Rozpoczynając pracę z projektem wykorzystujemy virtualenv. Hermetyczne środowisko dla pojedyńczej aplikacji w pythonie:
 
   ::
 
@@ -85,7 +86,7 @@ Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'Th
 
 Aplikacja jest zintegrowana z:
 
-- 'TravisCI <https://travis-ci.com/github/kbalko/se_hello_printer_app>'_
+- [TravisCI](https://travis-ci.com/github/kbalko/se_hello_printer_app)
 
 - Docker
 
@@ -93,21 +94,15 @@ Aplikacja jest zintegrowana z:
 
 - Heroku
 
-- 'statuscake<https://www.statuscake.com/>'_
+- [Statuscake](https://www.statuscake.com/)
 
-- 'coveralls.io<https://coveralls.io/github/kbalko/se_hello_printer_app>'_
+- [coveralls.io](https://coveralls.io/github/kbalko/se_hello_printer_app)
 
 
 
 Linter tool:
 
 - Flake8
-
-wprowadzony w test_requirements.txt instalacja automatyczna po:
-
-::
-
-  $ make deps
 
 Pomocnicze
 ==========
