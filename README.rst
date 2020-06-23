@@ -3,7 +3,11 @@
 
 .. image:: https://app.statuscake.com/button/index.php?Track=mjo6Vaaxoz&Days=1&Design=1
     :target: https://www.statuscake.com
- 
+
+.. image:: https://coveralls.io/repos/github/kbalko/se_hello_printer_app/badge.svg
+    :target: https://coveralls.io/github/kbalko/se_hello_printer_app
+
+
 
 
 Simple Flask App
