@@ -11,11 +11,45 @@
 
 Simple Flask App
 ================
-Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.
 
-Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com). :heavy_check_mark:
+Informacje ogólne
+-----------------
 
+Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.:heavy_check_mark:
 
+Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com). 
+Aplikacja pozwala na rejestrację, zalogowanie, dodanie treści, przeglądanie treści innych użytkowników, zaobserwowanie innych użytkowników, zresetowanie hasła via e-mail. 
+W razie awarii administrator dostaje informację na adres e-mail wraz z logami błędu.
+
+Aplikacja jest zintegrowana z:
+
+- `TravisCI <https://travis-ci.com/github/kbalko/se_hello_printer_app>`_
+
+- Docker
+
+- Jenkins
+
+- Heroku
+
+- `Statuscake <https://www.statuscake.com>`_
+
+- `coveralls.io <https://coveralls.io/github/kbalko/se_hello_printer_app>`_
+
+Linter tool:
+
+- Flake8
+
+Główne technologie
+------------------
+- Python 2.7
+- Flask 1.1.2
+- SQLAlchemy 2.4.3
+- Bootstrap 3
+
+Wszystkie zależności dostępne w pliku requirements.txt i test_requirements.txt
+
+Uruchomienie
+------------
 
 - Rozpoczynając pracę z projektem wykorzystujemy virtualenv. Hermetyczne środowisko dla pojedyńczej aplikacji w pythonie:
 
@@ -84,25 +118,6 @@ Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'Th
     # deaktywacja virtualenv
     $ deactivate
 
-Aplikacja jest zintegrowana z:
-
-- `TravisCI <https://travis-ci.com/github/kbalko/se_hello_printer_app>`_
-
-- Docker
-
-- Jenkins
-
-- Heroku
-
-- `Statuscake <https://www.statuscake.com>`_
-
-- `coveralls.io <https://coveralls.io/github/kbalko/se_hello_printer_app>`_
-
-
-
-Linter tool:
-
-- Flake8
 
 Pomocnicze
 ==========
@@ -119,9 +134,31 @@ Ubuntu
 
 - Instalacja dockera: `dockerce howto <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_
 
+SQLAlchemy
+----------
+- Instalacja odbywa się automatycznie w ramach tergetu 'make deps' w Makefile. 
+    
+ Instalacja manualna:
 
+  ::
+  
+   $ pip install flask-sqlalchemy
+   
+   # database migrations
+   $ pip install flask-migrate
 
-Materiały
-=========
+- Kilka pomocnych podstawowych komend do obsługi bazy danych:
 
-- https://virtualenvwrapper.readthedocs.io/en/latest/
+  ::
+  
+    # inicjalizacja
+    $ flask db init 
+    
+    # skrypt migracji
+    $ flask db migrate -m"comment"
+    
+    # zapis zmian
+    $ flask upgrade
+
+`Dokumentacja SQLAlchemy <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>`_
+
