@@ -8,7 +8,6 @@ install:
 script:
 - make lint
 - make test
-- make test_cov
 - make test_xunit
 - make docker_build
 - make docker_push

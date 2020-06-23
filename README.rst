@@ -12,7 +12,7 @@
 Simple Flask App
 ================
 Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.
-Na potrzeby zaliczenia rozbudowana  na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
+Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
 
 
 
@@ -27,6 +27,12 @@ Na potrzeby zaliczenia rozbudowana  na podstawie 'The Flask Mega-Tutorial' (migu
     $ mkvirtualenv wsb-simple-flask-app
     $ pip install -r requirements.txt
     $ pip install -r test_requirements.txt
+
+  lub wykorzystując target z Makefile
+
+  ::
+    # instalacja dependencies
+    $ make deps
 
   Sprawdź: `documentację virtualenvwrappera <https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html>`_ oraz `biblioteki flask <http://flask.pocoo.org>`_.
 
@@ -60,7 +66,8 @@ Na potrzeby zaliczenia rozbudowana  na podstawie 'The Flask Mega-Tutorial' (migu
       PYTHONPATH=. py.test --verbose -s
 
   ::
-    #  uruchomienie testu
+
+    # uruchomienie testu
     $ make test
 
 - Kontynuując pracę z projektem aktywujemy hermetyczne środowisko dla aplikacji py:
@@ -75,7 +82,9 @@ Na potrzeby zaliczenia rozbudowana  na podstawie 'The Flask Mega-Tutorial' (migu
     # deaktywacja virtualenv
     $ deactivate
 
-- Integracja z TravisCI
+Aplikacja jest zintegrowana z:
+
+- TravisCI 'TravisCI<https://travis-ci.com/github/kbalko/se_hello_printer_app>'
 
 - Docker
 
@@ -83,9 +92,18 @@ Na potrzeby zaliczenia rozbudowana  na podstawie 'The Flask Mega-Tutorial' (migu
 
 - Heroku
 
-- statuscake
+- 'statuscake<https://www.statuscake.com/>'
 
-- coveralls.io
+- 'coveralls.io<https://coveralls.io/github/kbalko/se_hello_printer_app>'
+
+
+
+Linter tool:
+- Flake8
+wprowadzony w test_requirements.txt instalacja automatyczna
+
+::
+  $ make deps
 
 Pomocnicze
 ==========
