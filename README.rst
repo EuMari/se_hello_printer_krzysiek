@@ -86,17 +86,19 @@ Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'Th
 
 Aplikacja jest zintegrowana z:
 
-- [TravisCI](https://travis-ci.com/github/kbalko/se_hello_printer_app)
+[TravisCI](https://travis-ci.com/github/kbalko/se_hello_printer_app)
 
-- Docker
+Docker
 
-- Jenkins
+Jenkins
 
-- Heroku
+Heroku
 
-- [Statuscake](https://www.statuscake.com/)
+[Statuscake](https://www.statuscake.com/)
 
-- [coveralls.io](https://coveralls.io/github/kbalko/se_hello_printer_app)
+[coveralls.io](https://coveralls.io/github/kbalko/se_hello_printer_app)
+
+[Google](https://www.google.com)
 
 
 
