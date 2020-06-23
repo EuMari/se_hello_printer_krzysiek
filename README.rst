@@ -28,9 +28,10 @@ Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'Th
     $ pip install -r requirements.txt
     $ pip install -r test_requirements.txt
 
-  lub wykorzystując target z Makefile
+  lub wykorzystując target z Makefile:
 
   ::
+
     # instalacja dependencies
     $ make deps
 
@@ -84,7 +85,7 @@ Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'Th
 
 Aplikacja jest zintegrowana z:
 
-- TravisCI 'TravisCI<https://travis-ci.com/github/kbalko/se_hello_printer_app>'
+- 'TravisCI <https://travis-ci.com/github/kbalko/se_hello_printer_app>'_
 
 - Docker
 
@@ -92,17 +93,20 @@ Aplikacja jest zintegrowana z:
 
 - Heroku
 
-- 'statuscake<https://www.statuscake.com/>'
+- 'statuscake<https://www.statuscake.com/>'_
 
-- 'coveralls.io<https://coveralls.io/github/kbalko/se_hello_printer_app>'
+- 'coveralls.io<https://coveralls.io/github/kbalko/se_hello_printer_app>'_
 
 
 
 Linter tool:
+
 - Flake8
-wprowadzony w test_requirements.txt instalacja automatyczna
+
+wprowadzony w test_requirements.txt instalacja automatyczna po:
 
 ::
+
   $ make deps
 
 Pomocnicze
