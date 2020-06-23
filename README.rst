@@ -137,8 +137,7 @@ Ubuntu
 SQLAlchemy
 ----------
 - Instalacja odbywa się automatycznie w ramach tergetu 'make deps' w Makefile. 
-    
- Instalacja manualna:
+  Instalacja manualna:
 
   ::
   
