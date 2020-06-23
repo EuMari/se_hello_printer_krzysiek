@@ -14,4 +14,4 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     TESTING=False   #zmienna to testow poczty
-    ADMINS = ['drybrushlands@adres.pl']
+    ADMINS = ['drybrushlands@gmail.com']
