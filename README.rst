@@ -3,8 +3,7 @@
 
 .. image:: https://app.statuscake.com/button/index.php?Track=mjo6Vaaxoz&Days=1&Design=1
     :target: https://www.statuscake.com
-
-
+ 
 
 
 Simple Flask App
