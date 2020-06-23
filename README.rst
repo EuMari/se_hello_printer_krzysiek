@@ -18,8 +18,7 @@ Informacje ogólne
 Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.:heavy_check_mark:
 
 Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com). 
-Aplikacja pozwala na rejestrację, zalogowanie, dodanie treści, przeglądanie treści innych użytkowników, zaobserwowanie innych użytkowników, zresetowanie hasła via e-mail. 
-W razie awarii administrator dostaje informację na adres e-mail wraz z logami błędu.
+Aplikacja pozwala na rejestrację użytkowników, zalogowanie, dodanie treści, przeglądanie treści innych użytkowników, zaobserwowanie innych użytkowników.
 
 Aplikacja jest zintegrowana z:
 
