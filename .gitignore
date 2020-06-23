@@ -3,3 +3,4 @@
 test_results.xml
 coverage.xml
 .coverage
+.coveralls.yml
