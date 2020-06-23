@@ -17,8 +17,8 @@ Informacje ogólne
 
 Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.:heavy_check_mark:
 
-Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com). 
-Aplikacja pozwala na rejestrację użytkowników, zalogowanie, dodanie treści, przeglądanie treści innych użytkowników, zaobserwowanie innych użytkowników.
+Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
+Aplikacja pozwala na rejestrację użytkowników, zalogowanie, edycje profilu, dodanie treści, przeglądanie treści innych użytkowników, zaobserwowanie innych użytkowników.
 
 Aplikacja jest zintegrowana z:
 
@@ -135,28 +135,27 @@ Ubuntu
 
 SQLAlchemy
 ----------
-- Instalacja odbywa się automatycznie w ramach tergetu 'make deps' w Makefile. 
+- Instalacja odbywa się automatycznie w ramach tergetu 'make deps' w Makefile.
   Instalacja manualna:
 
   ::
-  
+
    $ pip install flask-sqlalchemy
-   
+
    # database migrations
    $ pip install flask-migrate
 
 - Kilka pomocnych podstawowych komend do obsługi bazy danych:
 
   ::
-  
+
     # inicjalizacja
-    $ flask db init 
-    
+    $ flask db init
+
     # skrypt migracji
     $ flask db migrate -m"comment"
-    
+
     # zapis zmian
     $ flask upgrade
 
 `Dokumentacja SQLAlchemy <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>`_
-
