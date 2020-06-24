@@ -8,7 +8,6 @@ test:
     - make deps
     - make lint
     - make test
-    - coveralls
 docker:
   image: docker:stable
   services:
