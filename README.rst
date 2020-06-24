@@ -24,7 +24,7 @@ Aplikacja jest zintegrowana z:
 
 - `TravisCI <https://travis-ci.com/github/kbalko/se_hello_printer_app>`_
 
-- `Gitlab' <https://gitlab.com/krisbalko/se_hello_printer_app>`_
+- `Gitlab <https://gitlab.com/krisbalko/se_hello_printer_app>`_
 
 - `Docker <https://hub.docker.com/r/kbalko/hello-world-printer>`_
 
