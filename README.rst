@@ -24,11 +24,13 @@ Aplikacja jest zintegrowana z:
 
 - `TravisCI <https://travis-ci.com/github/kbalko/se_hello_printer_app>`_
 
-- Docker
+- `Gitlab' <https://gitlab.com/krisbalko/se_hello_printer_app>`_
+
+- `Docker <https://hub.docker.com/r/kbalko/hello-world-printer>`_
 
 - Jenkins
 
-- Heroku
+- `Heroku <https://dry-brushlands-36461.herokuapp.com>`_
 
 - `Statuscake <https://www.statuscake.com>`_
 
