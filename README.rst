@@ -15,10 +15,11 @@ Simple Flask App
 Informacje ogólne
 -----------------
 
-Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona '/formaty') z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.:heavy_check_mark:
+Prosta aplikacja wyświetlająca imię i wiadomość w różnych formatach (podstrona `'/formaty' <https://dry-brushlands-36461.herokuapp.com/formaty?name=Tu+moze+byc+Twoje+imie&output=json>`_ z zajęć o Continuous Integration, Continuous Delivery i Continuous Deployment.:heavy_check_mark:
 
-Na potrzeby zaliczenia projektu rozbudowana do formy mikrobloga na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
-Aplikacja pozwala na rejestrację użytkowników, zalogowanie, edycje profilu, dodanie treści, przeglądanie treści innych użytkowników, zaobserwowanie innych użytkowników.
+Na potrzeby zaliczenia projektu rozbudowana do formy `mikrobloga <https://dry-brushlands-36461.herokuapp.com>`_ na podstawie 'The Flask Mega-Tutorial' (miguelgrinberg.com).
+Aplikacja pozwala na rejestrację użytkowników, zalogowanie, edycje profilu, dodawanie treści, przeglądanie treści innych użytkowników, zaobserwowanie/nieobserwowanie innych użytkowników a także resetowanie hasła via e-mail weryfikowane tokenem.
+W razie awarii administrator dostaje wiadomość e-mail z logami błedu.
 
 Aplikacja jest zintegrowana z:
 
