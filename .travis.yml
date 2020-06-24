@@ -2,7 +2,7 @@ language: python
 services:
 - docker
 python:
-- '3.6.9'
+- '2.7'
 install:
 - make deps
 script:
