@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import unittest
 from hello_world import app, db
-from hello_world.models import User, Post # noqa
-from datetime import datetime, timedelta # noqa
+from hello_world.models import User, Post
+from datetime import datetime, timedelta
 
 
 class UserModelCase(unittest.TestCase):
