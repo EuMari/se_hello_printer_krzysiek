@@ -168,7 +168,7 @@ def unfollow(username):
         if user == current_user:
             flash(u'Nie możesz przestać śledzić samego siebie.')
             return redirect(url_for('user', username=username))
-            current_user.unfollow(user)
+        current_user.unfollow(user)
         db.session.commit()
         flash(u'Nie obserwujesz użytkownika {}.'.format(username))
         return redirect(url_for('user', username=username))
