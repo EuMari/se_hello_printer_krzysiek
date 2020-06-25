@@ -20,6 +20,19 @@ class UserModelCase(unittest.TestCase):
         self.assertFalse(u.check_password('nieprawidlowe'))
         self.assertTrue(u.check_password('testowe'))
 
+    def test_get_and_reset_password_token(self):
+        u = User(username='JanTester')
+        u2 = User(username='AniaTesterka')
+        db.session.add_all([u, u2])
+        db.session.commit()
+        token = u.get_reset_password_token()
+        token2 = u2.get_reset_password_token()
+        #  sprawdza czy tokeny userów są różne
+        self.assertNotEqual(token, token2)
+        # sprawdza czy token pasuje do usera
+        self.assertEqual(u.verify_reset_password_token(token), u)
+        self.assertNotEqual(u2.verify_reset_password_token(token2), u)
+
     def test_follow(self):
         u1 = User(username='JanTester', email='jantester@test.pl')
         u2 = User(username='Zuzia', email='zuzia@test.pl')

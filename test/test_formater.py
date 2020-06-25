@@ -21,3 +21,13 @@ class TestFormater(unittest.TestCase):
         r = FT.plain_text("MSG", "IMIE")
         r2 = "IMIE MSG"
         self.assertEquals(r, r2)
+
+    def test_format_to_json(self):
+        r = FT.format_to_json("msg", "imie")
+        r2 = '{"imie": "imie", "msg": "msg"}'
+        self.assertEquals(r, r2)
+
+    def test_format_to_xml(self):
+        r = FT.format_to_xml("msg", "imie")
+        r2 = '<greetings>\n  <name>imie</name>\n  <msg>msg</msg>\n</greetings>\n' # noqa
+        self.assertEquals(r, r2)
