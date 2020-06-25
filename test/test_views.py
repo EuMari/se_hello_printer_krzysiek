@@ -17,8 +17,8 @@ class FlaskrTestCase(unittest.TestCase):
         ','.join(SUPPORTED) in rv.data
 
     def test_name_output(self):
-        rv = self.app.get('/formaty?name=Ania')
-        op = 'Ania'
+        rv = self.app.get('/formaty?name=Anna')
+        op = 'Anna'
         self.assertEquals(op, rv.data.split(" ")[0])
 
     def test_msg_with_output_json(self):

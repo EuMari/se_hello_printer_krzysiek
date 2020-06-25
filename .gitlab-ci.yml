@@ -18,7 +18,3 @@ docker:
     - apk add --update make
     - make docker_build
     - make docker_push
-  stage: push_docker_image
-  script:
-    - docker build -t registry.gitlab.com/krisbalko/se_hello_printer_app .
-    - docker push registry.gitlab.com/krisbalko/se_hello_printer_app
