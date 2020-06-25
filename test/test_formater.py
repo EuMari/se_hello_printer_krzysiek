@@ -1,8 +1,13 @@
 import unittest
+from hello_world import app
 import hello_world.formater as FT
 
 
 class TestFormater(unittest.TestCase):
+    def setUp(self):
+        app.config['TESTING'] = True
+        self.app = app.test_client()
+
     def test_plain_uppercase(self):
         r = FT.plain_text_upper_case("dfdfTest", "ddfeSSSetest")
         name = r.split(" ")[0]

@@ -33,6 +33,12 @@ class UserModelCase(unittest.TestCase):
         self.assertEqual(u.verify_reset_password_token(token), u)
         self.assertNotEqual(u2.verify_reset_password_token(token2), u)
 
+    def test_avatar(self):
+        u = User(username='tester2', email='tester2@testy.pl')
+        self.assertEqual(u.avatar(70), ('https://www.gravatar.com/avatar/'
+                                        'cc49fbb9790fe0823efda45ccb9b5a59'
+                                        '?d=identicon&s=70'))
+
     def test_follow(self):
         u1 = User(username='JanTester', email='jantester@test.pl')
         u2 = User(username='Zuzia', email='zuzia@test.pl')
