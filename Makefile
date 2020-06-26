@@ -17,6 +17,10 @@ test_cov:
 test_xunit:
 	PYTHONPATH=. py.test -s --cov=. --junit-xml=test_results.xml
 
+test_robot:
+	robot -o NONE -r NONE -l NONE -v BROWSER:headlessfirefox \
+	/home/tester/studia/se_hello_printer_app/test/robotframework/test.robot
+
 test_complexity:
 	radon cc hello_world
 

@@ -1,3 +1,6 @@
 pytest==4.6.10
 flake8==3.8.1
 pytest-cov==2.8.1
+coveralls==1.11.1
+robotframework==3.2.1
+robotframework-seleniumlibrary==4.4.0
