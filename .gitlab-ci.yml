@@ -9,6 +9,8 @@ test:
     - make deps
     - make lint
     - make test
+    - make test_xunit
+    - make test_robot
 docker:
   image: docker:stable
   services:

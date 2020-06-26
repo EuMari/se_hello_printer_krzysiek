@@ -9,6 +9,7 @@ script:
 - make lint
 - make test
 - make test_xunit
+- make test_robot
 - make docker_build
 - make docker_push
 after_success:
