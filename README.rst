@@ -97,13 +97,14 @@ Uruchomienie
   lub za pośrednictwem tergetów z pliku Makefile:
 
   ::
+
     #uruchamianie testów
     $ make test
     $ make_xunit
     $ make test_complexity
     $ make test_cov
 
-   tworzonych zgodnie z zasadą:
+  tworzonych zgodnie z zasadą:
 
   ::
 

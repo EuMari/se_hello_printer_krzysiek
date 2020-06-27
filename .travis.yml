@@ -5,6 +5,10 @@ python:
 - '2.7'
 install:
 - make deps
+before script:
+- wget "https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz"
+- tar xfz geckodriver-v0.24.0-linux64.tar.gz
+- sudo mv geckodriver /usr/local/bin
 script:
 - make lint
 - make test
