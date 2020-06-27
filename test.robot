@@ -3,7 +3,6 @@ Library   SeleniumLibrary
 
 Suite Teardown   Close All Browsers
 
-
 *** Variables ***
 
 ${browser}                  Firefox

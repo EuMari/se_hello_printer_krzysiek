@@ -118,6 +118,8 @@ Uruchomienie
     test_xunit:
       PYTHONPATH=. py.test --verbose -s --cov=. --cov-report xml
 
+  Testy są uruchamiane automatycznie w TravisCI/Gilab po pushu na github.
+
 - Testy z Robot Framework i biblioteką Selenium:
 
   ::
@@ -128,6 +130,8 @@ Uruchomienie
     $ robot -v BROWSER:headlessfirefox test.robot
     # lub target z Makefile:
     $ make robot_test
+
+  Testy w Robocie są uruchamiane automatycznie w TravisCI po pushu na github.
 
 - Kontynuując pracę z projektem aktywujemy hermetyczne środowisko dla aplikacji py:
 
