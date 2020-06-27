@@ -118,7 +118,7 @@ Uruchomienie
     test_xunit:
       PYTHONPATH=. py.test --verbose -s --cov=. --cov-report xml
 
-  Testy są uruchamiane automatycznie w TravisCI/Gilab po pushu na github.
+  Testy są uruchamiane automatycznie w TravisCI/Gitab po pushu na github/lab
 
 - Testy z Robot Framework i biblioteką Selenium:
 
@@ -160,6 +160,12 @@ Ubuntu
     $ sudo pip install virtualenvwrapper
 
 - Instalacja dockera: `dockerce howto <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`_
+
+- Przekazanie zmiennych do heroku:
+
+  ::
+
+    $ heroku config:add zmienna
 
 SQLAlchemy
 ----------
