@@ -4,3 +4,6 @@ test_results.xml
 coverage.xml
 .coverage
 .coveralls.yml
+.xml
+.png
+.log
