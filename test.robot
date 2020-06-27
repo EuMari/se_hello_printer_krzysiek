@@ -6,8 +6,9 @@ Suite Teardown   Close All Browsers
 
 *** Variables ***
 
-${browser}   Firefox
-${website}   http://127.0.0.1:5000
+${browser}                  Firefox
+${website}                  http://dry-brushlands-36461.herokuapp.com/
+${other_user_page}          http://dry-brushlands-36461.herokuapp.com/user/Tester4
 
 ${login_valid_but_taken}    Tester2
 ${login_valid_free}         Newlogin
@@ -15,6 +16,7 @@ ${pass_valid}               tester2
 ${pass_invalid}             Invalidpass
 ${email_valid_but_taken}    tester2@testy.pl
 ${email_valid_free}         someemail@bu.pl
+${test_text}                Post dodany automatycznie - Robot Framework v2
 
 ${selector_login}           css: #username
 ${selector_pass}            css: #password
@@ -28,6 +30,8 @@ ${go_to_index_page}         css: #index
 ${go_to_user_page}          css: #user
 ${go_to_logout}             css: #logout
 ${go_to_edit_profile}       css: #edit_profile
+${post_area}                css: #post
+
 
 
 ${logging_sucess}       Hej, ${login_valid_but_taken}
@@ -40,6 +44,9 @@ ${save_change}          Zmiany zapisane
 ${login_is_taken}       Użyj innego loginu
 ${email_is_taken}       Użyj innego adresu email
 ${different_pass}       Field must be equal to password.
+${unfollow}             Nie obserwujesz użytkownika Tester4.
+${follow}               Obserwujesz użytkownika Tester4
+${afer_post}            Twój post został opublikowany.
 
 *** Test Cases ***
 
@@ -125,6 +132,7 @@ Test 10 Check if navbar 'logout' direction works
    Logging with valid credentials
    Check if user is log in
    Click in '/logout' direction
+   Close browser
 
 Test 11 Check if '/edit_profile' direction and 'save' button works
    Go to website
@@ -136,6 +144,27 @@ Test 11 Check if '/edit_profile' direction and 'save' button works
    Page Should Contain    ${save_change}
    Click button           ${back_button}
    Page Should Contain    ${user_page}
+   Close browser
+
+Test 12 Check if 'follow'/'unfollow' button works
+   Go to website
+   Logging with valid credentials
+   Check if user is log in
+   Go to                  ${other_user_page}
+   Click submit button
+   Page Should Contain    ${follow}
+   Click submit button
+   Page Should Contain    ${unfollow}
+   Close browser
+
+Test 13 Check if user can add post
+   Go to website
+   Logging with valid credentials
+   Check if user is log in
+   Input text in text area
+   Click submit button
+   Page Should Contain    ${afer_post}
+   Page Should Contain    ${test_text}
 
 *** Keywords ***
 
@@ -212,6 +241,9 @@ Click in '/logout' direction
    Click Link                          ${go_to_logout}
    Wait Until Element Is Visible       ${selector_login}
    Page Should Contain                 ${logging_requ}
+
+Input text in text area
+   Input Text         ${post_area}     ${test_text}
 
 Close browser
    Close All Browsers

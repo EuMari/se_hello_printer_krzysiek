@@ -81,8 +81,11 @@ Uruchomienie
     # jako zwykły program
     $ python main.py
 
-    # albo:
-    $ PYTHONPATH=. FLASK_APP=hello_world flask run
+    # lub lub wykorzystując target z Makefile:
+    $ make run
+
+    #uruchamia komendę:
+    PYTHONPATH=. FLASK_APP=hello_world flask run
 
 - Uruchamianie testów (see: http://doc.pytest.org/en/latest/capture.html):
 
@@ -91,22 +94,39 @@ Uruchomienie
     $ PYTHONPATH=. py.test
     $ PYTHONPATH=. py.test  --verbose -s
 
-  lub za pośrednictwem pliku Makefile zgodnie z zasadą:
+  lub za pośrednictwem tergetów z pliku Makefile:
+
+  ::
+    #uruchamianie testów
+    $ make test
+    $ make_xunit
+    $ make test_complexity
+    $ make test_cov
+
+   tworzonych zgodnie z zasadą:
+
   ::
 
     target: dependencies
       system command(s)
 
   na przykład:
-  ::
-
-    test:
-      PYTHONPATH=. py.test --verbose -s
 
   ::
 
-    # uruchomienie testu
-    $ make test
+    test_xunit:
+      PYTHONPATH=. py.test --verbose -s --cov=. --cov-report xml
+
+- Testy z Robot Framework i biblioteką Selenium:
+
+  ::
+
+    $ robot test.robot
+
+    # uruchomienie z działaniem w tle - bez widocznego okna przeglądarki
+    $ robot -v BROWSER:headlessfirefox test.robot
+    # lub target z Makefile:
+    $ make robot_test
 
 - Kontynuując pracę z projektem aktywujemy hermetyczne środowisko dla aplikacji py:
 
