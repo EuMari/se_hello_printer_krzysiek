@@ -10,7 +10,7 @@ W każdy momencie można je również odpalać z linii komend.
 Linter tool
 -----------
 Narzędzie: flake8
-Analiza kodu pod wzlędem poprawności składni i zgodności z PEP8, pozwala tworzyć czytelniejszy kod. Oszczednośc czasu przy debugowaniu kodu (wyłapytanie "w locie" literówek, formatowania, składni, stylu). Powinny być uruchamiane po każdej wprowadzonej zmianie w kodzie
+Analiza kodu pod wzlędem poprawności składni i zgodności z PEP8, pozwala tworzyć czytelniejszy kod. Oszczednośc czasu przy debugowaniu kodu (wyłapytanie "w locie" literówek, formatowania, składni, stylu). Powinny być uruchamiane po każdej wprowadzonej zmianie w kodzie.
    
     # uruchomienie 
     $ make lint
@@ -25,7 +25,8 @@ Sprawdzenie krytycznej funkjonalności aplikacji. W przypadku tej aplikacji jest
 Testy jednostkowe
 -----------------
 Weryfikacja działania pojedyńczych elementów programu. Pozwalają na szybkie wychwycenie i zlokalizowanie zaintnienia defeku w kodzie. 
-W pełni zautomatyzowane. Powinny być uruchamiane po każdej wprowadzonej zmianie w kodzie
+W pełni zautomatyzowane. Powinny być uruchamiane po każdej wprowadzonej zmianie w kodzie.
+
     # uruchomienie
     $ make test
 
