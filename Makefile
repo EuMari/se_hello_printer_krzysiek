@@ -7,7 +7,7 @@ WEBSITE_PROD=https://dry-brushlands-36461.herokuapp.com
 
 deps:
 	pip install -r requirements.txt; \
-	pip install -r test_requirements.txt
+	pip install -r test_requirements.txt \
 
 test:
 	PYTHONPATH=. py.test --verbose -s
