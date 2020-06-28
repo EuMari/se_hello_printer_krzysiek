@@ -74,5 +74,6 @@ Sprawdzają działnie/dostępniość aplikacji przy symulowanym ruchu użytkowni
 Monitoring
 ----------
 Statuscake - administrator dostaje informację e-mail w momencie braku dostępności aplikacji i powrotu do działania z czasem trwania awarii. 
-Gitlab - informacja e-mail w razie gdy bulid i deploy aplikacji nie przejdzie pomyślnie a także informacja gdy kolejny bulid i deploy przejdą pomyślnie
-Ponadto w kodzie aplikacjii zaimplemetnowana jest funkcja, która wysyła e-maila z logiem awarii, gdy strona odpowie na zapytanie kodem HTTP - '500'
+Gitlab - informacja e-mail w razie gdy bulid i deploy aplikacji nie przejdzie pomyślnie a także informacja gdy kolejny bulid i deploy przejdą pomyślnie.
+
+Ponadto w kodzie aplikacjii zaimplemetnowana jest funkcja, która wysyła do administratora e-maila z logiem awarii, gdy strona odpowie na zapytanie użytkownika kodem HTTP - '500'.
