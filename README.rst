@@ -2,7 +2,7 @@
     :target: https://travis-ci.com/kbalko/se_hello_printer_app
 
 .. image:: https://coveralls.io/repos/github/kbalko/se_hello_printer_app/badge.svg?branch=master
-:target: https://coveralls.io/github/kbalko/se_hello_printer_app?branch=master
+    :target: https://coveralls.io/github/kbalko/se_hello_printer_app?branch=master
 
 .. image:: https://app.statuscake.com/button/index.php?Track=mjo6Vaaxoz&Days=1&Design=1
     :target: https://www.statuscake.com
