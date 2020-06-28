@@ -1,7 +1,5 @@
 *** Settings ***
 Documentation   Resource file with keywords and variables
-Metadata        Version 1.0
-Metadata        Author  kbalko
 
 Library		SeleniumLibrary
 
