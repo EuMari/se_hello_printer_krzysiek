@@ -143,7 +143,7 @@ def follow(username):
     if form.validate_on_submit():
         user = User.query.filter_by(username=username).first()
         if user is None:
-            flash(u'Nie znaleziono użytkownika: {} '.format(username))
+            flash(u'Nie znaleziono użytkownika: {}.'.format(username))
             return redirect(url_for('index'))
         if user == current_user:
             flash(u'Nie możesz śledzić samego siebie.')
