@@ -1,5 +1,6 @@
 SERVICE_NAME=hello-world-printer
 MY_DOCKER_NAME=$(SERVICE_NAME)
+WEBSITE_PROD=https://dry-brushlands-36461.herokuapp.com
 
 .PHONY: test
 .DEFAULT_GOAL := test
@@ -14,6 +15,9 @@ test:
 test_cov:
 	PYTHONPATH=. py.test --verbose -s --cov=. --cov-report xml
 
+test_siege:
+	siege -t30s -c2 -v ${WEBSITE_PROD}
+
 test_xunit:
 	PYTHONPATH=. py.test -s --cov=. --junit-xml=test_results.xml
 
@@ -24,7 +28,7 @@ test_complexity:
 	radon cc hello_world
 
 test_smoke:
-	curl --fail 127.0.0.1:5000
+	curl --fail ${WEBSITE_PROD}
 
 lint:
 	flake8 hello_world test
