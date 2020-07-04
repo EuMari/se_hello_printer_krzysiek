@@ -18,7 +18,7 @@ Po tej komendzie pliki trafiają do GitLaba.
 
 ### Proces testów 
 
-Travis/Gitlab/Jenkis sprawdzają zgodność zależności z plików requirements.txt i test_requirements.txt. Następnie uruchamiane testy jednostkowe, metryki pokrycia kodu i testy w Robot Framework. Po skryptach testowych na podstawie metryk pokrycia kodu uruchamiane jest narzędzie [Coveralls](https://coveralls.io/github/kbalko/se_hello_printer_app). Proces testów szerzej opisany jest w pliku /docs/proces_todo.md. 
+Travis/Gitlab/Jenkis sprawdzają zgodność zależności z plików requirements.txt i test_requirements.txt. Następnie uruchamiane są testy jednostkowe, metryki pokrycia kodu i testy w Robot Framework. Po skryptach testowych na podstawie metryk pokrycia kodu uruchamiane jest narzędzie [Coveralls](https://coveralls.io/github/kbalko/se_hello_printer_app). Proces testów szerzej opisany jest w pliku /docs/proces_todo.md. 
 
 ### Jenkins - 127.0.0.1:8080
 
