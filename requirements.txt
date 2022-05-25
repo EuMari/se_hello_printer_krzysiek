@@ -6,7 +6,7 @@ flask-migrate==2.5.3
 flask-moment==0.9.0
 flask-bootstrap==3.3.7.1
 flask-mail==0.9.1
-pyjwt==1.7.1
+pyjwt==2.4.0
 python-dotenv==0.13.0
 gunicorn==19.10.0
 email-validator==1.1.1
